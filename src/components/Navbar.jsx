@@ -37,7 +37,7 @@ const Navbar = () => {
 <NavLink
   to="/"
   className={({ isActive }) =>
-    isActive ? "text-white btn btn-primary" : ""
+    isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
   }
 >
  Home
@@ -45,7 +45,7 @@ const Navbar = () => {
 <NavLink
   to="/allJobs"
   className={({ isActive }) =>
-    isActive ? "text-white btn-primary btn" : ""
+    isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
   }
 >
   All Jobs
@@ -56,7 +56,7 @@ const Navbar = () => {
           <NavLink
             to="/addJob"
             className={({ isActive }) =>
-              isActive ? "btn btn-primary text-white" : ""
+              isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
             }
           >
             Add a Job
@@ -65,7 +65,7 @@ const Navbar = () => {
           <NavLink
             to="/acceptTask"
             className={({ isActive }) =>
-              isActive ? "btn btn-primary text-white" : ""
+              isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
             }
           >
             My Accepted Tasks
@@ -88,7 +88,7 @@ const Navbar = () => {
          {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xs md:text-xl ">Freelance MarketPlace</a>
+    <a className=" text-xl md:text-2xl font-bold "><span className='text-orange-400'>Freelance</span> MarketPlace</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu flex justify-center items-center gap-5 menu-horizontal px-1">
