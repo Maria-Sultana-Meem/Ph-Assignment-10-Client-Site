@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { AuthContext } from '../context/AuthContext';
 import toast from 'react-hot-toast';
@@ -68,13 +68,19 @@ const ViewDetails = () => {
       <span className="font-semibold">Email:</span> {detail.userEmail}
     </p>
     <p className="text-gray-800 leading-relaxed">{detail.summary}</p>
-     <div className='flex justify-end'>
+     <div className='flex justify-end gap-5'>
         <button
          onClick={handleAcceptTask}
         className="btn bg-linear-to-r from-orange-300 to-orange-600 text-white  hover:scale-105 transition-transform duration-300"
       >
         Accept This Job
       </button>
+        <Link to={`/updateJob/${detail._id}`}
+        
+        className="btn bg-linear-to-r from-orange-300 to-orange-600 text-white  hover:scale-105 transition-transform duration-300"
+      >
+        Update Job
+      </Link>
      </div>
          </div>
   </div>
