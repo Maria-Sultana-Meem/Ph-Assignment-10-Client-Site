@@ -37,10 +37,10 @@ const Navbar = () => {
 <NavLink
   to="/"
   className={({ isActive }) =>
-    isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
+    isActive ? "text-orange-500 border-b-orange-500 border-b-2 " : ""
   }
 >
- Home
+ <p className='hover:border-b-2 hover:border-b-orange-500'>Home</p>
 </NavLink>
 <NavLink
   to="/allJobs"
@@ -48,7 +48,7 @@ const Navbar = () => {
     isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
   }
 >
-  All Jobs
+  <p className='hover:border-b-2 hover:border-b-orange-500'>All Jobs</p>
 </NavLink>
 {/* logged in */}
  {user && (
@@ -59,7 +59,7 @@ const Navbar = () => {
               isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
             }
           >
-            Add a Job
+            <p className='hover:border-b-2 hover:border-b-orange-500'>Add a Job</p>
           </NavLink>
 
           <NavLink
@@ -68,7 +68,7 @@ const Navbar = () => {
               isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
             }
           >
-            My Accepted Tasks
+           <p className='hover:border-b-2 hover:border-b-orange-500'>My Accepted Task</p>
           </NavLink>
         </>
       )}
@@ -121,13 +121,13 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                className=""
+                className="hover:border-b-2 hover:border-b-orange-500"
               >
                  Login
               </Link>
               <Link
                 to="/register"
-                className=""
+                className="hover:border-b-2 hover:border-b-orange-500"
               >
                 Register
               </Link>

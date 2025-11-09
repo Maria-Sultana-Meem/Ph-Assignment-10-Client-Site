@@ -21,6 +21,7 @@ const router = createBrowserRouter([
         index:true,
         path:'/',
         Component:Home,
+        loader:()=>fetch('http://localhost:3000/latest-jobs')
    },
    {
     path:'/allJobs',
