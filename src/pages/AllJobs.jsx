@@ -9,7 +9,7 @@ const AllJobs = () => {
     const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
  useEffect(() => {
-    axios.get("http://localhost:3000/latest-jobs") 
+    axios.get("http://localhost:3000/allJobs") 
       .then((res) => {
         
         setJobs(res.data);
