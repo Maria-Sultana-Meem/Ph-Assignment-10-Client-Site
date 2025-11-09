@@ -10,6 +10,7 @@ import AllJobs from "../pages/AllJobs";
 import AddJob from "../pages/AddJob";
 import AcceptTasks from "../pages/AcceptTasks";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import ViewDetails from "../pages/ViewDetails";
 
 
 const router = createBrowserRouter([
@@ -21,11 +22,12 @@ const router = createBrowserRouter([
         index:true,
         path:'/',
         Component:Home,
-        loader:()=>fetch('http://localhost:3000/latest-jobs')
+        
    },
    {
     path:'/allJobs',
-    Component:AllJobs
+    Component:AllJobs,
+   
    },
    {
     path:'/addJob',
@@ -43,6 +45,11 @@ const router = createBrowserRouter([
    {
     path:'/register',
     Component:Register
+   },
+   {
+    path:'/allJobs/:id',
+    element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+    
    }
 
 
