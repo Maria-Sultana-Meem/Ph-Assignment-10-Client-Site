@@ -28,7 +28,8 @@ const AddJob = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:3000/addJob", jobData);
+      const newJob = { ...jobData, userEmail: user?.email };
+      const res = await axios.post("http://localhost:3000/addJob", newJob);
       if (res.data.insertedId) {
         toast.success("Job added successfully!");
         setJob({ title: "", category: "", summary: "", coverImage: "" });

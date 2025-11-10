@@ -63,11 +63,11 @@ const Update = () => {
   if (loading) return <LoadingSpinner />;
 
   return (
-    <div className="pt-20 pb-10 max-w-2xl mx-auto">
+    <div className="pt-20 pb-10 max-w-lg mx-auto">
       <h1 className="text-3xl font-bold text-center mb-6 text-orange-500">
         Update Job
       </h1>
-      <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-lg shadow-md">
+      <form onSubmit={handleSubmit} className="space-y-4 shadow-sm shadow-or bg-white p-6 rounded-lg ">
         <div>
           <label className="block font-semibold mb-1">Title</label>
           <input
@@ -75,7 +75,7 @@ const Update = () => {
             name="title"
             value={jobData.title}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered rounded-full w-full"
             required
           />
         </div>
@@ -86,7 +86,7 @@ const Update = () => {
             name="category"
             value={jobData.category}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered rounded-full w-full"
             required
           >
             <option value="">Select category</option>
@@ -105,7 +105,7 @@ const Update = () => {
             name="summary"
             value={jobData.summary}
             onChange={handleChange}
-            className="input input-bordered w-full h-28"
+            className="input input-bordered  w-full h-28"
             required
           />
         </div>
@@ -117,14 +117,14 @@ const Update = () => {
             name="coverImage"
             value={jobData.coverImage}
             onChange={handleChange}
-            className="input input-bordered w-full"
+            className="input input-bordered rounded-full w-full"
             required
           />
         </div>
 
         <button
           type="submit"
-          className="btn bg-orange-500 text-white w-full hover:scale-105 transition-transform duration-300"
+          className="btn bg-orange-500 rounded-full text-white w-full hover:scale-105 transition-transform duration-300"
         >
           Update Job
         </button>

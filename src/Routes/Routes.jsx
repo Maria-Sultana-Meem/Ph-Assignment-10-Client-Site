@@ -12,6 +12,7 @@ import AcceptTasks from "../pages/AcceptTasks";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import ViewDetails from "../pages/ViewDetails";
 import Update from "../pages/Update";
+import MyAddedJob from "../pages/MyAddedJob";
 
 
 const router = createBrowserRouter([
@@ -54,7 +55,11 @@ const router = createBrowserRouter([
    },
    {
     path:'/updateJob/:id',
-    Component:Update
+   element:<PrivateRoute><Update></Update></PrivateRoute>
+   },
+   {
+    path:'/myAddedJob',
+    element:<PrivateRoute><MyAddedJob></MyAddedJob></PrivateRoute>
    }
 
 

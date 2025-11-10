@@ -73,14 +73,9 @@ const ViewDetails = () => {
          onClick={handleAcceptTask}
         className="btn bg-linear-to-r from-orange-300 to-orange-600 text-white  hover:scale-105 transition-transform duration-300"
       >
-        Accept This Job
+        Accept 
       </button>
-        <Link to={`/updateJob/${detail._id}`}
         
-        className="btn bg-linear-to-r from-orange-300 to-orange-600 text-white  hover:scale-105 transition-transform duration-300"
-      >
-        Update Job
-      </Link>
      </div>
          </div>
   </div>

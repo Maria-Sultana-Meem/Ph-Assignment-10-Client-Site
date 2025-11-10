@@ -24,6 +24,15 @@ const AcceptTasks = () => {
   if (loading) {
     return <LoadingSpinner></LoadingSpinner>;
   }
+    
+  if (accepted.length === 0) {
+    return (
+      <div className="pt-20 pb-10 text-center text-2xl text-gray-500">
+        No accepted tasks added yet!
+      </div>
+    );
+  }
+
   return (
     <div className="pt-20 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5">

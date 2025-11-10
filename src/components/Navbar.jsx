@@ -70,6 +70,14 @@ const Navbar = () => {
           >
            <p className='hover:border-b-2 hover:border-b-orange-500'>My Accepted Task</p>
           </NavLink>
+          <NavLink
+            to="/myAddedJob"
+            className={({ isActive }) =>
+              isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
+            }
+          >
+           <p className='hover:border-b-2 hover:border-b-orange-500'>My Added Job</p>
+          </NavLink>
         </>
       )}
  
