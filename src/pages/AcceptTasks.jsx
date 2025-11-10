@@ -1,18 +1,23 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { FaTimes } from "react-icons/fa";
+import { AuthContext } from "../context/AuthContext";
 
 const AcceptTasks = () => {
   const [loading, setLoading] = useState(true);
-  const [accepted, setAccepted] = useState(null);
+  const [accepted, setAccepted] = useState([]);
+  const{user}=useContext(AuthContext)
+  
   useEffect(() => {
-    axios.get(`http://localhost:3000/my-accepted-task`).then((res) => {
+
+    axios.get(`http://localhost:3000/my-accepted-task`)
+    .then((res) => {
       setAccepted(res.data);
       setLoading(false);
     });
-  }, []);
+  }, [user]);
 
   const handleDelete=(id)=>{
     axios.delete(`http://localhost:3000/my-accepted-task/${id}`).then(()=>{

@@ -19,32 +19,49 @@ const ViewDetails = () => {
         setDetail(res.data);
         setLoading(false);
       })
-    
+
   }, [id]);
 
   if (loading) {
     return <LoadingSpinner></LoadingSpinner>
   }
 
-  const handleAcceptTask=()=>{
-   axios.post('http://localhost:3000/my-accepted-task',{
-     jobId: detail._id,
-  title: detail.title,
-  postedBy: detail.postedBy,
-  category: detail.category,
-  summary: detail.summary,
-  coverImage: detail.coverImage,
-  userEmail: detail.userEmail,
-  acceptedBy: user.email,
-  acceptedAt: new Date()
-   })
-   .then(res=>{
-     if (res.data) {
-        toast.success("Job accepted Succesfully")
-     }
-   })
-
+  const handleAcceptTask=async()=>{
+   if (!user) {
+    toast.error("Please login first!");
+    return;
   }
+
+  try {
+  
+    const token = await user.getIdToken(true);
+
+    const res = await axios.post(
+      'http://localhost:3000/my-accepted-task',
+      {
+        jobId: detail._id,
+        title: detail.title,
+        postedBy: detail.postedBy,
+        category: detail.category,
+        summary: detail.summary,
+        coverImage: detail.coverImage,
+        userEmail: detail.userEmail,
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+
+    if (res.data?.insertedId) {
+      toast.success("Job accepted successfully!");
+    } else {
+      toast.error("Failed to accept job");
+    }
+  } catch (error) {
+    console.error(error);
+    toast.error(error.response?.data?.message || "Server error");
+  }
+};
 
     return (
         <div className='pt-20 pb-10'>

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router';
 
 const MyAddedJob = () => {
 
@@ -9,11 +10,15 @@ const MyAddedJob = () => {
   const [myJobs, setMyJobs] = useState([]);
 
   useEffect(() => {
-    if (user?.email) {
-      axios
-        .get(`http://localhost:3000/myAddedJob?email=${user?.email}`)
-        .then((res) => setMyJobs(res.data))
-        .catch((err) => console.error(err));
+    if (user) {
+      user.getIdToken(true).then((token) => {
+        axios
+          .get("http://localhost:3000/myAddedJob", { 
+            headers: { Authorization: `Bearer ${token}` }
+         })
+          .then(res => setMyJobs(res.data))
+          .catch(err => console.error(err));
+      });
     }
   }, [user]);
 
@@ -64,12 +69,12 @@ const MyAddedJob = () => {
                 >
                   Delete
                 </button>
-                <button
-                  onClick={() => (window.location.href = `/updateJob/${job._id}`)}
+                <Link to={`/updateJob/${job._id}`}
+                 
                   className="btn bg-orange-500 text-white rounded-full hover:bg-orange-600"
                 >
                   Edit
-                </button>
+                </Link>
               </div>
             </div>
           ))}

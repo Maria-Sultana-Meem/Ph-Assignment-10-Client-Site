@@ -20,6 +20,11 @@ const AddJob = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!user) {
+      toast.error("Please login first!");
+      return;
+    }
+
     const jobData = {
       ...job,
       postedBy: user.displayName,
@@ -28,15 +33,24 @@ const AddJob = () => {
     };
 
     try {
-      const newJob = { ...jobData, userEmail: user?.email };
-      const res = await axios.post("http://localhost:3000/addJob", newJob);
+     
+      const token = await user.getIdToken(true);
+
+      const res = await axios.post("http://localhost:3000/addJob", jobData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
       if (res.data.insertedId) {
         toast.success("Job added successfully!");
         setJob({ title: "", category: "", summary: "", coverImage: "" });
+      } else {
+        toast.error("Failed to add job");
       }
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong!");
+      toast.error(error.response?.data?.message || "Server error");
     }
   };
 
