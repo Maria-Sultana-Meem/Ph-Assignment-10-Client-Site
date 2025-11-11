@@ -32,6 +32,12 @@ const ViewDetails = () => {
     return;
   }
 
+  if (detail.userEmail === user.email) {
+    toast.error("You cannot accept your own job!");
+    return; 
+  }
+
+
   try {
   
     const token = await user.getIdToken(true);
