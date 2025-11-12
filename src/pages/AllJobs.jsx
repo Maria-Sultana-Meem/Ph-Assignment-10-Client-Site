@@ -25,10 +25,10 @@ const AllJobs = () => {
     
     return (
         <div className='pt-30 pb-10'>
-            <h1 className='font-bold text-2xl md:text-3xl lg:text-5xl text-center'>All <span className='text-orange-400'>Jobs</span> here</h1>
+            <h1 className='font-bold text-2xl md:text-3xl lg:text-5xl text-center animate-bounce'>All <span className='text-orange-400'>Jobs</span> here</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5'>
                 {
-                    jobs.map(job=>  <div key={job._id} className='shadow-sm hover:shadow-2xl space-y-2 rounded-lg p-6 hover:scale-105 transform transition ease-in-out'>
+                    jobs.map(job=>  <div  data-aos="fade-up" key={job._id} className='shadow-sm hover:shadow-2xl space-y-2 rounded-lg p-6 hover:scale-105 transform transition ease-in-out'>
                                 <div><img className='w-full h-[200px] object-cover rounded-t-lg' src={job.coverImage} alt="" /></div>
                                 <h1 className='font-semibold '>Title: <span className='text-orange-400'>{job.title}</span></h1>
                          

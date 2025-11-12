@@ -29,7 +29,7 @@ const Home = () => {
     <div className='py-10'>
     <Banner></Banner>
      <div className='py-16'>
-      <h1 className='font-bold lg:text-5xl md:text-3xl text-2xl text-center py-5'>Our <span className='text-orange-400'>Latest</span> Jobs</h1>
+      <h1 className='font-bold lg:text-5xl md:text-3xl text-2xl text-center py-5 animate-pulse'>Our <span className='text-orange-400'>Latest</span> Jobs</h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
       {
         jobs.map(job=><LatestJobs key={job._id} job={job}></LatestJobs>)

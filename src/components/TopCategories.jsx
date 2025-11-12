@@ -22,7 +22,7 @@ const categories = [
 const TopCategories = () => {
     return (
         <div className='  rounded-lg px-4 py-10 shadow-sm shadow-orange-400'>
-            <h1 className='lg:text-5xl md:text-3xl text-2xl text-center font-bold'>
+            <h1 className='lg:text-5xl md:text-3xl text-2xl text-center font-bold animate-pulse'>
                 Top <span className='text-orange-400'>Categories</span></h1>
                   <div className="mt-10">
         <Marquee gradient={false} direction="left" speed={70}>

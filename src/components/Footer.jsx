@@ -5,8 +5,9 @@ import { FaLinkedin, FaSquareYoutube, FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer footer-horizontal footer-center bg-orange-100/50 text-base-content rounded p-10">
-        <nav className="grid grid-flow-col gap-4">
+      <footer className="footer footer-horizontal footer-center bg-orange-300 text-base-content rounded p-6">
+        <a className=" text-xl md:text-2xl font-bold flex justify-center animate-pulse"><span className='text-orange-500'>Freelance</span> MarketPlace</a>
+        <nav className="grid grid-flow-col gap-2">
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>

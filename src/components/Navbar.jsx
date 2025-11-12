@@ -83,7 +83,7 @@ const Navbar = () => {
  
     </>
     return (
-        <div className='bg-base-100 shadow-sm fixed top-0 left-0 z-50 w-full'>
+        <div className='bg-orange-300 shadow-sm fixed top-0 left-0 z-50 w-full'>
             <div className="navbar w-11/12 md:w-10/12 mx-auto">
   <div className="navbar-start">
     <div className="dropdown">
@@ -121,7 +121,7 @@ const Navbar = () => {
            {
           user?  <button onClick={handleSignout}
             
-            className="  hover:scale-110  transition-all duration-300  px-3 py-1 rounded-md "
+            className="   hover:border-b-2 hover:border-b-orange-500   px-3 py-1 rounded-md "
           >
             Log Out
           </button>:

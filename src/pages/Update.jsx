@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import LoadingSpinner from "../components/LoadingSpinner";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const Update = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const {user}=useContext(AuthContext)
 
   const [jobData, setJobData] = useState({
     title: "",
@@ -48,17 +50,28 @@ const Update = () => {
     setJobData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.put(`http://localhost:3000/allJobs/${id}`, jobData);
-      toast.success("Job updated successfully!");
-      navigate(`/allJobs/${id}`);
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to update job");
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    if (!user) {
+      toast.error("You are not logged in");
+      return;
     }
-  };
+
+    const token = await user.getIdToken(); 
+    await axios.put(`http://localhost:3000/allJobs/${id}`, jobData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    toast.success("Job updated successfully!");
+    navigate(`/allJobs/${id}`);
+  } catch (err) {
+    console.error(err);
+    toast.error("Failed to update job");
+  }
+};
 
   if (loading) return <LoadingSpinner />;
 

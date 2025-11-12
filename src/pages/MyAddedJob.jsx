@@ -3,11 +3,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const MyAddedJob = () => {
 
     const { user } = useContext(AuthContext); 
   const [myJobs, setMyJobs] = useState([]);
+  const [loading,setLoading]=useState(true)
 
   useEffect(() => {
     if (user) {
@@ -16,25 +18,37 @@ const MyAddedJob = () => {
           .get("http://localhost:3000/myAddedJob", { 
             headers: { Authorization: `Bearer ${token}` }
          })
-          .then(res => setMyJobs(res.data))
+          .then(res => {
+            setMyJobs(res.data)
+            setLoading(false)
+          })
           .catch(err => console.error(err));
       });
     }
   }, [user]);
 
     const handleDelete = async (id) => {
-   
-    try {
-      const res = await axios.delete(`http://localhost:3000/deleteJob/${id}`);
-      if (res.data.deletedCount > 0) {
-        toast.success("Job deleted successfully!");
-        setMyJobs(myJobs.filter((job) => job._id !== id));
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to delete job");
+  if (!user) return toast.error("You are not logged in");
+
+  try {
+    const token = await user.getIdToken(true);
+
+    const res = await axios.delete(`http://localhost:3000/deleteJob/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    if (res.data.deletedCount > 0) {
+      toast.success("Job deleted successfully!");
+      setMyJobs(myJobs.filter((job) => job._id !== id));
     }
-  };
+  } catch (error) {
+    console.error(error);
+    toast.error("Failed to delete job");
+  }
+};
+if (loading) {
+  return <LoadingSpinner></LoadingSpinner>
+}
 
     return (
     <div className="pt-20 pb-10 max-w-5xl mx-auto">

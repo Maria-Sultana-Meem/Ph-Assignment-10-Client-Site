@@ -6,10 +6,10 @@ const AboutPlatform = () => {
     const {user}=useContext(AuthContext)
     return (
         <div className="py-20 px-10 bg-orange-200 mt-10 rounded-lg">
-            <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
-                {/* Left: Text */}
+            <div data-aos="zoom-in-up" className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
+               
                 <div className="lg:w-1/2 space-y-6">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-orange-400">
+                    <h2 className="text-4xl lg:text-5xl font-bold text-orange-400 animate-pulse">
                         About Freelance MarketPlace
                     </h2>
                     <p className="text-gray-700 leading-relaxed">

@@ -6,7 +6,7 @@ const LatestJobs = ({job}) => {
    const {title,summary,coverImage,postedBy,category,userEmail} = job
     
     return (
-        <div className='shadow-sm hover:shadow-2xl space-y-2 rounded-lg p-6 hover:scale-105 transform transition ease-in-out'>
+        <div  data-aos="fade-up" className='shadow-sm hover:shadow-2xl space-y-2 rounded-lg p-6 hover:scale-105 transform transition ease-in-out'>
             <div><img className='w-full h-[200px] object-cover rounded-t-lg' src={coverImage} alt="" /></div>
             <h1 className='font-semibold '>Title: <span className='text-orange-400'>{title}</span></h1>
      
