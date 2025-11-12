@@ -22,7 +22,7 @@ const Update = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/allJobs/${id}`);
+        const res = await axios.get(`https://freelance-marketplace-lovat.vercel.app/allJobs/${id}`);
         if (!res.data) {
           toast.error("Job not found");
           navigate("/allJobs");
@@ -59,7 +59,7 @@ const Update = () => {
     }
 
     const token = await user.getIdToken(); 
-    await axios.put(`http://localhost:3000/allJobs/${id}`, jobData, {
+    await axios.put(`https://freelance-marketplace-lovat.vercel.app/allJobs/${id}`, jobData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

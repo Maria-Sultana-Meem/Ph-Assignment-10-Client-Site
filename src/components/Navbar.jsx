@@ -96,7 +96,7 @@ const Navbar = () => {
          {links}
       </ul>
     </div>
-    <a className=" text-xl md:text-2xl font-bold "><span className='text-orange-400'>Freelance</span> MarketPlace</a>
+    <Link to='/' className=" text-xl md:text-2xl font-bold "><span className='text-orange-400'>Freelance</span> MarketPlace</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu flex justify-center items-center gap-5 menu-horizontal px-1">

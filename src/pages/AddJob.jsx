@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
-import { AuthContext } from '../context/AuthContext';
-import axios from 'axios';
-import toast from 'react-hot-toast';
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const AddJob = () => {
-    const {user}=useContext(AuthContext)
-     const [job, setJob] = useState({
+  const { user } = useContext(AuthContext);
+  const [job, setJob] = useState({
     title: "",
     category: "",
     summary: "",
@@ -33,10 +33,9 @@ const AddJob = () => {
     };
 
     try {
-     
       const token = await user.getIdToken(true);
 
-      const res = await axios.post("http://localhost:3000/addJob", jobData, {
+      const res = await axios.post("https://freelance-marketplace-lovat.vercel.app/addJob", jobData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -54,7 +53,7 @@ const AddJob = () => {
     }
   };
 
-   return (
+  return (
     <div className="pt-24 pb-10 flex justify-center">
       <div className="w-full max-w-lg  shadow-sm shadow-orange-400 rounded-xl p-8">
         <h1 className="text-2xl font-bold text-center mb-6 text-orange-500">
@@ -62,7 +61,6 @@ const AddJob = () => {
         </h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-         
           <div>
             <label className="block font-medium mb-1">Title</label>
             <input
@@ -75,7 +73,6 @@ const AddJob = () => {
             />
           </div>
 
-         
           <div>
             <label className="block font-medium mb-1">Posted By</label>
             <input
@@ -86,7 +83,6 @@ const AddJob = () => {
             />
           </div>
 
-       
           <div>
             <label className="block font-medium mb-1">Category</label>
             <select
@@ -104,7 +100,6 @@ const AddJob = () => {
             </select>
           </div>
 
-        
           <div>
             <label className="block font-medium mb-1">Summary</label>
             <textarea
@@ -117,7 +112,6 @@ const AddJob = () => {
             />
           </div>
 
-         
           <div>
             <label className="block font-medium mb-1">Cover Image URL</label>
             <input
@@ -130,7 +124,6 @@ const AddJob = () => {
             />
           </div>
 
-         
           <div>
             <label className="block font-medium mb-1">User Email</label>
             <input

@@ -12,7 +12,7 @@ const Home = () => {
  const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
  useEffect(() => {
-    axios.get("http://localhost:3000/latest-jobs") 
+    axios.get("https://freelance-marketplace-lovat.vercel.app/latest-jobs") 
       .then((res) => {
         
         setJobs(res.data);

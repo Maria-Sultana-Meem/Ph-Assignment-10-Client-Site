@@ -11,20 +11,42 @@ const AcceptTasks = () => {
   const{user}=useContext(AuthContext)
   
   useEffect(() => {
+  if (!user) return;
 
-    axios.get(`http://localhost:3000/my-accepted-task`)
+  user.getIdToken(true).then((token) => {
+    axios.get(`https://freelance-marketplace-lovat.vercel.app/my-accepted-task`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
     .then((res) => {
       setAccepted(res.data);
       setLoading(false);
-    });
-  }, [user]);
-
-  const handleDelete=(id)=>{
-    axios.delete(`http://localhost:3000/my-accepted-task/${id}`).then(()=>{
-      setAccepted((accepted)=>accepted.filter(job=>job._id !==id))
-       
     })
+    .catch((err) => {
+      console.error(err);
+      setLoading(false);
+    });
+  });
+}, [user]);
+
+  const handleDelete = async (id) => {
+  if (!user) return;
+
+  try {
+    const token = await user.getIdToken(true);
+
+    await axios.delete(
+      `https://freelance-marketplace-lovat.vercel.app/my-accepted-task/${id}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+
+    
+    setAccepted((prev) => prev.filter((job) => job._id !== id));
+  } catch (error) {
+    console.error("Delete failed:", error);
   }
+};
 
   if (loading) {
     return <LoadingSpinner></LoadingSpinner>;
@@ -54,7 +76,7 @@ const AcceptTasks = () => {
               />
             </div>
             <h1 className="font-semibold ">
-              Title: <span className="text-orange-400">{job.title}</span>
+               <span className="text-orange-400">{job.title}</span>
             </h1>
 
             <p className="text-sm text-orange-500">{job.category}</p>

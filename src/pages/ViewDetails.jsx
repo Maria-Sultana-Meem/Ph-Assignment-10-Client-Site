@@ -14,7 +14,7 @@ const ViewDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/allJobs/${id}`)
+      .get(`https://freelance-marketplace-lovat.vercel.app/allJobs/${id}`)
       .then((res) => {
         setDetail(res.data);
         setLoading(false);
@@ -43,7 +43,7 @@ const ViewDetails = () => {
     const token = await user.getIdToken(true);
 
     const res = await axios.post(
-      'http://localhost:3000/my-accepted-task',
+      'https://freelance-marketplace-lovat.vercel.app/my-accepted-task',
       {
         jobId: detail._id,
         title: detail.title,

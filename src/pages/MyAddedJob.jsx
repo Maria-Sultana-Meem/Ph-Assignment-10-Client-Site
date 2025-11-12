@@ -15,7 +15,7 @@ const MyAddedJob = () => {
     if (user) {
       user.getIdToken(true).then((token) => {
         axios
-          .get("http://localhost:3000/myAddedJob", { 
+          .get("https://freelance-marketplace-lovat.vercel.app/myAddedJob", { 
             headers: { Authorization: `Bearer ${token}` }
          })
           .then(res => {
@@ -33,7 +33,7 @@ const MyAddedJob = () => {
   try {
     const token = await user.getIdToken(true);
 
-    const res = await axios.delete(`http://localhost:3000/deleteJob/${id}`, {
+    const res = await axios.delete(`https://freelance-marketplace-lovat.vercel.app/deleteJob/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
