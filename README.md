@@ -10,7 +10,7 @@ Freelance Marketplace is a web application that allows users to post and browse 
 - **User Authentication:** Users can register and log in securely using Firebase Authentication.
 - **Add New Jobs:** Authenticated users can post jobs with title, category, summary, cover image, and their email.
 - **Browse Jobs:** Users can view all jobs in a clean, responsive grid layout with image previews and summary truncation.
-- **Job Categories:** Filter and organize jobs by categories like Web Development, Graphic Design, Data Entry, and Digital Marketing.
+- **Job Categories:** Filter and organize jobs by categories like Web Development, Graphic Design, Data Entry,  and Digital Marketing.
 - **Responsive Design:** Mobile-friendly and fully responsive layout built with Tailwind CSS.
 - **Secure API Requests:** Backend API secured with Firebase token-based authentication.
 - **Interactive UI:** Smooth hover effects, buttons, and animations enhance user experience.

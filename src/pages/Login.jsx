@@ -39,6 +39,7 @@ const Login = () => {
           .catch((e) => {
             console.log(e.code);
             
+            
       if (e.code === "auth/user-not-found") {
         toast.error("No user found! Please register first.");
       } 
