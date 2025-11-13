@@ -28,7 +28,7 @@ This project uses the following npm packages:
 
 - **react-hot-toast** – For notifications and toast messages.
 - **react-icons** – For including vector icons .
-- **aos** – Animate On Scroll library for scroll animations.
+- **aos and Gsap** – Animate On Scroll library for scroll animations.
 - **animate.css** – Pre-built CSS animations.
 - **swiper** – For sliders or carousels in the UI.
 - **axios** – For making API requests to the backend.
