@@ -51,13 +51,11 @@ if (loading) {
 }
 
     return (
-    <div className="pt-20 pb-10 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6 text-orange-500">
-        My Added Jobs
-      </h1>
+    <div className="pt-20 pb-10 max-w-5xl mx-auto ">
+     
 
       {myJobs.length === 0 ? (
-        <p className="text-center text-gray-500">No jobs added yet!</p>
+        <p className="lg:text-4xl md:text-3xl text-2xl text-gray-500 h-screen flex justify-center items-center">No jobs added yet!</p>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {myJobs.map((job) => (
