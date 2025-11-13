@@ -1,6 +1,6 @@
 # Freelance Marketplace
 
-**Live Site:** [https://freelance-marketplace-assignment-10.netlify.app/]
+**Live Site:** [https://freelane-101.surge.sh/]
 
 ## Project Overview
 Freelance Marketplace is a web application that allows users to post and browse freelance jobs. Users can securely add jobs, view all available jobs, and filter them by categories. The platform is responsive, interactive, and user-friendly.
