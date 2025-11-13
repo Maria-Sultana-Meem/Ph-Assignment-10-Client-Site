@@ -1,9 +1,8 @@
 import React, {  useContext, useEffect, useState } from 'react';
-import { FaHome, FaUser } from 'react-icons/fa';
+
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
-import { FaGear } from 'react-icons/fa6';
-import { IoLogIn, IoLogOut } from 'react-icons/io5';
+
 import toast from 'react-hot-toast';
 
 
@@ -50,7 +49,7 @@ const Navbar = () => {
 >
   <p className='hover:border-b-2 hover:border-b-orange-500'>All Jobs</p>
 </NavLink>
-{/* logged in */}
+
  {user && (
         <>
           <NavLink
@@ -121,7 +120,7 @@ const Navbar = () => {
            {
           user?  <button onClick={handleSignout}
             
-            className="   hover:border-b-2 hover:border-b-orange-500   px-3 py-1 rounded-md "
+            className="   hover:border-b-2 btn btn-sm bg-linear-to-r from-orange-300 to-orange-400 hover:border-b-orange-500   px-3 py-1 rounded-md "
           >
             Log Out
           </button>:
@@ -129,13 +128,13 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                className="hover:border-b-2 hover:border-b-orange-500"
+                className="hover:border-b-2 btn btn-sm bg-linear-to-r from-orange-300 to-orange-400 hover:border-b-orange-500"
               >
                  Login
               </Link>
               <Link
                 to="/register"
-                className="hover:border-b-2 hover:border-b-orange-500"
+                className="hover:border-b-2 btn btn-sm bg-linear-to-r from-orange-300 to-orange-400  hover:border-b-orange-500"
               >
                 Register
               </Link>
