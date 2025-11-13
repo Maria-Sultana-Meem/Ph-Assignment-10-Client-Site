@@ -24,10 +24,10 @@ const LatestJobs = ({ job }) => {
         </h1>
 
         <p className="text-sm text-orange-500">{category}</p>
-        <p className="font-semibold text-gray-600 text-sm">By: {postedBy}</p>
+        <p className="font-semibold  text-sm">By: {postedBy}</p>
         <p className="text-xs">Email: {userEmail}</p>
 
-        <p className="text-gray-700 text-sm  flex-grow">
+        <p className=" text-sm  flex-grow">
           {summary?.split(" ").slice(0, 10).join(" ")}...
         </p>
       </div>

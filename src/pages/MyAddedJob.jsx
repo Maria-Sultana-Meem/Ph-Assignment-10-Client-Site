@@ -61,7 +61,7 @@ if (loading) {
           {myJobs.map((job) => (
             <div
               key={job._id}
-              className="card bg-white shadow-md hover:shadow-lg p-4 rounded-xl"
+              className="card  shadow-md shadow-orange-400 hover:scale-105 p-4 rounded-xl"
             >
               <img
                 src={job.coverImage}
@@ -69,7 +69,7 @@ if (loading) {
                 className="w-full h-40 object-cover rounded-lg mb-3"
               />
               <h2 className="font-semibold text-lg">{job.title}</h2>
-              <p className="text-sm text-gray-500 mb-2">
+              <p className="text-sm  mb-2">
                 {job.category}
               </p>
               <p className="text-sm mb-3">{job.summary}</p>

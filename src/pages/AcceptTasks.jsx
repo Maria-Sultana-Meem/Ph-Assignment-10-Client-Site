@@ -66,7 +66,7 @@ const AcceptTasks = () => {
         {accepted.map((job) => (
           <div
             key={job._id}
-            className="shadow-sm hover:shadow-2xl space-y-2 rounded-lg p-6 hover:scale-105 transform transition ease-in-out"
+            className="shadow-sm shadow-orange-400 space-y-2 rounded-lg p-6 hover:scale-105 transform transition ease-in-out"
           >
             <div>
               <img
@@ -80,10 +80,10 @@ const AcceptTasks = () => {
             </h1>
 
             <p className="text-sm text-orange-500">{job.category}</p>
-            <p className="font-semibold text-gray-600 text-sm">
+            <p className="font-semibold  text-sm">
               By:{job.postedBy}
             </p>
-            <p className="text-gray-700 text-sm">
+            <p className=" text-sm">
               {job.summary.slice(0, 100)}...
             </p>
             <p className="text-xs">Accepted by: {job.acceptedBy}</p>

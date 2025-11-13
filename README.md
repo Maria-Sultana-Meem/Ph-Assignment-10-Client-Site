@@ -22,3 +22,15 @@ Freelance Marketplace is a web application that allows users to post and browse 
 - **Authentication:** Firebase Authentication
 - **Deployment:** Vercel (Frontend), MongoDB Atlas (Database)
 
+## Dependencies / Used Packages
+
+This project uses the following npm packages:
+
+- **react-hot-toast** – For notifications and toast messages.
+- **react-icons** – For including vector icons .
+- **aos** – Animate On Scroll library for scroll animations.
+- **animate.css** – Pre-built CSS animations.
+- **swiper** – For sliders or carousels in the UI.
+- **axios** – For making API requests to the backend.
+- **react-router** – For frontend routing between pages.
+- **firebase** – For authentication and token-based API security.

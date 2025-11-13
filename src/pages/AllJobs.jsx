@@ -46,12 +46,12 @@ const AllJobs = () => {
         </h1>
 
         <p className="text-sm text-orange-500">{job.category}</p>
-        <p className="font-semibold text-gray-600 text-sm">
+        <p className="font-semibold  text-sm">
           By: {job.postedBy}
         </p>
         <p className="text-xs">Email: {job.userEmail}</p>
 
-        <p className="text-gray-700 text-sm ">
+        <p className=" text-sm ">
           {job.summary?.split(" ").slice(0, 10).join(" ")}..
          
         </p>

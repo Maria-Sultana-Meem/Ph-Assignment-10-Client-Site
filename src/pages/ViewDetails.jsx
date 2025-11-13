@@ -72,7 +72,7 @@ const ViewDetails = () => {
     return (
         <div className='pt-20 pb-10'>
             <div className="max-w-4xl  shadow-orange-500 md:flex justify-between gap-5 items-center mx-auto mt-10 p-6 bg-white rounded-xl shadow-sm">
-          <div className='lg:w-1/2 shadow-sm shadow-orange-500 rounded-lg'>
+          <div className='lg:w-1/2 shadow-sm shadow-orange-500 rounded-lg animate-pulse'>
              <img
       src={detail.coverImage}
       alt={detail.title}
@@ -80,7 +80,7 @@ const ViewDetails = () => {
           </div>
 
          <div className='lg:w-1/2'>
-            <h1 className="text-3xl font-bold text-orange-500 mb-2">{detail.title}</h1>
+            <h1 className="text-3xl font-bold text-orange-500 mb-2 animate-bounce">{detail.title}</h1>
     <p className="text-gray-600 mb-2">
       <span className="font-semibold">Category:</span> <span className='text-orange-500'>{detail.category}</span>
     </p>
