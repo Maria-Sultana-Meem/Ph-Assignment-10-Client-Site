@@ -8,7 +8,7 @@ const LatestJobs = ({ job }) => {
   return (
     <div
       data-aos="fade-up"
-      className="shadow-sm hover:shadow-2xl rounded-lg p-6 hover:scale-105 transform transition ease-in-out flex flex-col h-[480px]"
+      className="shadow-sm shadow-orange-400  rounded-lg p-6 hover:scale-105 transform transition ease-in-out flex flex-col h-[480px]"
     >
     
       <img

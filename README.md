@@ -1,16 +1,24 @@
-# React + Vite
+# Freelance Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [https://freelance-marketplace-assignment-10.netlify.app/]
 
-Currently, two official plugins are available:
+## Project Overview
+Freelance Marketplace is a web application that allows users to post and browse freelance jobs. Users can securely add jobs, view all available jobs, and filter them by categories. The platform is responsive, interactive, and user-friendly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **User Authentication:** Users can register and log in securely using Firebase Authentication.
+- **Add New Jobs:** Authenticated users can post jobs with title, category, summary, cover image, and their email.
+- **Browse Jobs:** Users can view all jobs in a clean, responsive grid layout with image previews and summary truncation.
+- **Job Categories:** Filter and organize jobs by categories like Web Development, Graphic Design, Data Entry, and Digital Marketing.
+- **Responsive Design:** Mobile-friendly and fully responsive layout built with Tailwind CSS.
+- **Secure API Requests:** Backend API secured with Firebase token-based authentication.
+- **Interactive UI:** Smooth hover effects, buttons, and animations enhance user experience.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend:** React, Tailwind CSS, React Router
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** Firebase Authentication
+- **Deployment:** Vercel (Frontend), MongoDB Atlas (Database)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const AboutPlatform = () => {
     const {user}=useContext(AuthContext)
     return (
-        <div className="py-20 px-10 bg-orange-200 mt-10 rounded-lg">
+        <div className="py-20 px-10 bg-linear-to-bl from-orange-400 via-orange-200 to-orange-400 mt-10 rounded-lg">
             <div data-aos="zoom-in-up" className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
                
                 <div className="lg:w-1/2 space-y-6">

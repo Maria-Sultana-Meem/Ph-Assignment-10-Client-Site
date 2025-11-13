@@ -26,7 +26,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className='py-16 px-5 lg:px-20 rounded-lg mt-20 flex bg-linear-to-tl from-orange-300 via-orange-200 to-orange-300 flex-col-reverse md:flex-row items-center justify-between'>
+    <div className='py-16 px-5 lg:px-20 rounded-lg mt-20 flex bg-linear-to-bl from-orange-400 via-orange-200 to-orange-400 flex-col-reverse md:flex-row items-center justify-between'>
       
      
       <div className='space-y-5 w-full md:w-1/2'>

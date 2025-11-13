@@ -15,22 +15,22 @@ const Footer = () => {
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4">
-            <a href="https://www.facebook.com">
-              <FaFacebookSquare size={30} color="blue" />
+            <a href="https://www.facebook.com" className="hover:scale-110">
+              <FaFacebookSquare size={30} color="blue"/>
             </a>
-            <a href="https://www.instagram.com">
+            <a href="https://www.instagram.com" className="hover:scale-110">
               <FaInstagramSquare size={30} color="red" />
             </a>
-            <a href="https://x.com">
+            <a href="https://x.com" className="hover:scale-110">
               {" "}
               <FaXTwitter size={30} />
             </a>
-            <a href="https://www.linkedin.com">
+            <a href="https://www.linkedin.com" className="hover:scale-110">
               {" "}
               <FaLinkedin size={30} color="blue" />
             </a>
 
-            <a href="https://www.youtube.com">
+            <a href="https://www.youtube.com" className="hover:scale-110">
               {" "}
               <FaSquareYoutube size={30} color="red" />
             </a>

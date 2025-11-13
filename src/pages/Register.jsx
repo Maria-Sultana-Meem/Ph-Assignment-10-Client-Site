@@ -71,11 +71,11 @@ const Register = () => {
 
 
     return (
-        <div className='mt-20'>
+        <div className='mt-20 h-screen flex justify-center items-center'>
             <div className="card bg-base-100 mx-auto   w-full max-w-sm shrink-0 shadow-2xl">
                 
       <div className="card-body ">
-        <h1 className="text-4xl text-blue-500 font-bold mx-auto">Register now!</h1>
+        <h1 className="text-4xl text-orange-500 font-bold mx-auto">Register now!</h1>
          <form onSubmit={handleSignup} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Name</label>
@@ -124,16 +124,16 @@ const Register = () => {
                 </span>
               </div>
 
-              <button type="submit" className="bg-cyan-700 btn w-full text-white rounded-full">
+              <button type="submit" className="bg-linear-to-r from-orange-300 to-orange-400 btn w-full text-white rounded-full">
                 Register
               </button>
               <p className='text-center'>Or</p>
 
-              {/* Google Signin */}
+           
               <button
                 type="button"
                 onClick={handleGoogleSignin}
-                className="flex items-center justify-center gap-3 bg-white text-gray-800 px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
+                className="flex items-center  border-2 border-orange-300 rounded-full justify-center gap-3 bg-white text-gray-800 px-5 py-2  w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
               >
                 <img
                   src="https://www.svgrepo.com/show/475656/google-color.svg"

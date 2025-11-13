@@ -30,7 +30,7 @@ const AllJobs = () => {
     <div
       data-aos="fade-up"
       key={job._id}
-      className="shadow-sm hover:shadow-2xl rounded-lg p-6 hover:scale-105 transform transition ease-in-out flex flex-col h-full"
+      className="shadow-sm shadow-orange-400            rounded-lg p-6 hover:scale-105 transform transition ease-in-out flex flex-col h-full"
     >
       <div>
         <img
