@@ -9,6 +9,10 @@ import axios from 'axios'
 import Services from '../components/Services'
 import Statistics from '../components/Statistics'
 import FAQ from '../components/FAQ'
+import Newsletter from '../components/NewsLetter'
+
+import Testimonials from '../components/Testimonials'
+import CTA from '../components/CTA'
 
 const Home = () => {
   
@@ -39,11 +43,15 @@ const Home = () => {
       }
      </div>
      </div>
+    
      <TopCategories></TopCategories>
      <Services></Services>
      <Statistics></Statistics>
+      <CTA></CTA>
      <FAQ></FAQ>
      <AboutPlatform></AboutPlatform>
+     <Testimonials></Testimonials>
+     <Newsletter></Newsletter>
     </div>
   )
 }
