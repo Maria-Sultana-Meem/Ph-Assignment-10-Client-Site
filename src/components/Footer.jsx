@@ -15,7 +15,7 @@ const Footer = () => {
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4">
-            <a href="https://www.facebook.com" className="hover:scale-110">
+              <a href="https://www.facebook.com" className="hover:scale-110">
               <FaFacebookSquare size={30} color="blue"/>
             </a>
             <a href="https://www.instagram.com" className="hover:scale-110">

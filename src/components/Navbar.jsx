@@ -42,12 +42,30 @@ const Navbar = () => {
  <p className='hover:border-b-2 hover:border-b-orange-500'>Home</p>
 </NavLink>
 <NavLink
+  to="/about-us"
+  className={({ isActive }) =>
+    isActive ? "text-orange-500 border-b-orange-500 border-b-2 " : ""
+  }
+>
+ <p className='hover:border-b-2 hover:border-b-orange-500'>About Us</p>
+</NavLink>
+
+
+<NavLink
   to="/allJobs"
   className={({ isActive }) =>
     isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
   }
 >
   <p className='hover:border-b-2 hover:border-b-orange-500'>All Jobs</p>
+</NavLink>
+<NavLink
+  to="/contact-us"
+  className={({ isActive }) =>
+    isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
+  }
+>
+  <p className='hover:border-b-2 hover:border-b-orange-500'>Contact-us</p>
 </NavLink>
 
  {user && (

@@ -13,6 +13,8 @@ import PrivateRoute from "../privateRoute/PrivateRoute";
 import ViewDetails from "../pages/ViewDetails";
 import Update from "../pages/Update";
 import MyAddedJob from "../pages/MyAddedJob";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
 
 
 const router = createBrowserRouter([
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
     path:'/allJobs',
     Component:AllJobs,
    
+   },
+   {
+    path:'/about-us',
+    Component:AboutUs
+   },
+   {
+    path:'/contact-us',
+    Component:ContactUs
    },
    {
     path:'/addJob',

@@ -6,6 +6,9 @@ import TopCategories from '../components/TopCategories'
 import AboutPlatform from '../components/AboutPlatform'
 import LoadingSpinner from '../components/LoadingSpinner'
 import axios from 'axios'
+import Services from '../components/Services'
+import Statistics from '../components/Statistics'
+import FAQ from '../components/FAQ'
 
 const Home = () => {
   
@@ -37,6 +40,9 @@ const Home = () => {
      </div>
      </div>
      <TopCategories></TopCategories>
+     <Services></Services>
+     <Statistics></Statistics>
+     <FAQ></FAQ>
      <AboutPlatform></AboutPlatform>
     </div>
   )
