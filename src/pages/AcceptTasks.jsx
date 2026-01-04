@@ -61,7 +61,7 @@ const AcceptTasks = () => {
   }
 
   return (
-    <div className="pt-20 pb-10 ">
+    <div className="pt-0 pb-10 ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5 ">
         {accepted.map((job) => (
           <div

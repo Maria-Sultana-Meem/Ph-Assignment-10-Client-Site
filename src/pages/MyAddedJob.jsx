@@ -51,7 +51,7 @@ if (loading) {
 }
 
     return (
-    <div className="pt-20 pb-10 max-w-5xl mx-auto ">
+    <div className="pt-0 pb-10 max-w-5xl mx-auto ">
      
 
       {myJobs.length === 0 ? (

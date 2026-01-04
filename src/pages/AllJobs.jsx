@@ -28,7 +28,7 @@ const AllJobs = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        "http://localhost:3000/allJobs",
+        "https://freelance-marketplace-lovat.vercel.app/allJobs",
         {
           params: { search: debouncedSearch, category, page, limit: 8 },
         }

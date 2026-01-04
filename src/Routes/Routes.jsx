@@ -15,6 +15,9 @@ import Update from "../pages/Update";
 import MyAddedJob from "../pages/MyAddedJob";
 import AboutUs from "../pages/AboutUs";
 import ContactUs from "../pages/ContactUs";
+import DashboardLayout from "../Dashboard/DashboardLayout";
+import Profile from "../pages/Profile";
+import DashboardHome from "../Dashboard/dashboardRoutes/DashboardHome";
 
 
 const router = createBrowserRouter([
@@ -41,14 +44,14 @@ const router = createBrowserRouter([
     path:'/contact-us',
     Component:ContactUs
    },
-   {
-    path:'/addJob',
-    element:<PrivateRoute><AddJob></AddJob></PrivateRoute>
-   },
-   {
-    path:'/acceptTask',
-    element:<PrivateRoute><AcceptTasks></AcceptTasks></PrivateRoute>
-   },
+  //  {
+  //   path:'/addJob',
+  //   element:<PrivateRoute><AddJob></AddJob></PrivateRoute>
+  //  },
+  //  {
+  //   path:'/acceptTask',
+  //   element:<PrivateRoute><AcceptTasks></AcceptTasks></PrivateRoute>
+  //  },
    
    {
     path:'/login',
@@ -67,15 +70,40 @@ const router = createBrowserRouter([
     path:'/updateJob/:id',
    element:<PrivateRoute><Update></Update></PrivateRoute>
    },
-   {
-    path:'/myAddedJob',
-    element:<PrivateRoute><MyAddedJob></MyAddedJob></PrivateRoute>
-   }
-
-
-
+  //  {
+  //   path:'/myAddedJob',
+  //   element:<PrivateRoute><MyAddedJob></MyAddedJob></PrivateRoute>
+  //  }
 
 ]
   },
+  {
+    path:'/dashboard',
+    element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+    errorElement:<ErrorPage></ErrorPage>,
+    children:[
+      {
+        index:true,
+        element:<DashboardHome></DashboardHome>
+
+      },
+      {
+         path:'myAddedJob',
+     element:<MyAddedJob></MyAddedJob>
+      },
+      {
+       path:'acceptTask',
+   element:<AcceptTasks></AcceptTasks>
+      },
+      {
+    path:'addJob',
+    element:<AddJob></AddJob>
+   },
+   {
+    path:'profile',
+    element:<Profile></Profile>
+   }
+    ]
+  }
 ]);
 export default router

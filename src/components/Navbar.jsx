@@ -71,6 +71,14 @@ const Navbar = () => {
  {user && (
         <>
           <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
+            }
+          >
+            <p className='hover:border-b-2 hover:border-b-orange-500'>Dashboard</p>
+          </NavLink>
+          {/* <NavLink
             to="/addJob"
             className={({ isActive }) =>
               isActive ? "text-orange-500 border-b-orange-500 border-b-2" : ""
@@ -94,7 +102,7 @@ const Navbar = () => {
             }
           >
            <p className='hover:border-b-2 hover:border-b-orange-500'>My Added Job</p>
-          </NavLink>
+          </NavLink> */}
         </>
       )}
  
